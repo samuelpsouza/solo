@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
-
+  
 if [ ${UID} == 0 ]; then
     echo 'You cannot run Solo as the root user' >&2
     exit 1
 fi
+
+show_help() {
+    cli_name=${0##*/}
+
+    echo "
+Solo-CLI
+Version: 0.0.1
+Usage: $cli_name [command]"
+    exit 1
+}
+
+show_help
